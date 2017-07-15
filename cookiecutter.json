@@ -9,7 +9,7 @@
   "version": "1.0.0",
   "use_whitenoise": "y",
   "use_celery": "y",
-  "use_mialhog": "y",
+  "use_mailhog": "y",
   "use_sentry": "y",
   "use_opbeat": "y",
   "use_pycharm": "y",
