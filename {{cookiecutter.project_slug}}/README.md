@@ -1,31 +1,31 @@
-###### 项目描述
+# {{ cookiecutter.project_name }}
 
-> ?
-
-
-###### 主要功能
-
-1. ?
-2. ?
-3. ?
+?
 
 
-###### 快速开始
+## Features
 
-> 项目部署
+    ?
+
+
+## Quick start
+
+> Deploy
+
+Configure fabfile before start your fab command.
 
     fab deploy_testing/deploy_production
 
-> 创建supervisor conf 文件
+> Create supervisor configure file
 
-    ; XXX服务
-    [program:?_server]
-    directory=/usr/local/?/current
+    ; {{ cookiecutter.project_name }}
+    [program:{{ cookiecutter.project_name }}_server]
+    directory=/usr/local/{{ cookiecutter.project_name }}/current
     command=uwsgi config.ini
     autostart=true
     user=root
     redirect_stderr=true
-    stdout_logfile=/var/log/?.log
+    stdout_logfile=/var/log/{{ cookiecutter.project_name }}.log
 
 
 > 启动服务
