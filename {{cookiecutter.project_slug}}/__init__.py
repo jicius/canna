@@ -15,20 +15,3 @@
 # 
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-from flask.views import MethodView
-from flask import render_template
-
-from '{{ cookiecutter.project_name }}' import app
-
-
-class WelcomeCanna(MethodView):
-    """ 欢迎页
-    
-    """
-    def get(self):
-        return render_template('welcome.html')
-
-
-# 注册路由
-app.add_url_rule("/", view_func=WelcomeCanna.as_view('welcome'))

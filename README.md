@@ -1,9 +1,8 @@
 # Rest api template for flask
 
-[![Build Status](https://travis-ci.org/jicius/canna.svg?branch=master)](https://travis-ci.org/jicius/canna)
-
 This is my cookiecutter template to build a simple, fast and rock solid website based upon
 the flask framework.
+
 
 ## Features
 
@@ -11,18 +10,19 @@ the flask framework.
 * (Optional) tox
 * (Optional) Docker support
 
+
 ## Usage
 
-Install [Cookiecutter](https://github.com/audreyr/cookiecutter):
+Install Cookiecutter:
 
     $ pip install cookiecutter
 
 Initialize the project with cookiecutter and answer some questions for the newly started project:
 
-    $ cookiecutter https://github.com/jicius/canna
+    $ cookiecutter svn://202.85.213.18/hamilton/canna/trunk
 
     project_name [project_name]: flask_test
-    project_slug [tornado_test]:
+    project_slug [project_slug]:
     author_name [Your name]: Your name
     email [Your e-mail]: yourname@example.com
     github_username [yourname]: yourusername
