@@ -1,4 +1,4 @@
-# {{ cookiecutter.project_name }}
+# {{ cookiecutter.project_name.title() }}.
 
 ?
 
@@ -28,11 +28,11 @@ Configure fabfile before start your fab command.
     stdout_logfile=/var/log/{{ cookiecutter.project_name }}.log
 
 
-> 启动服务
+> Start Server
 
     supervisorctl reload
 
 
-###### 协议说明
+## License
 
 BSD
