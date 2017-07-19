@@ -24,7 +24,7 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 2.7",
     ],
-    description="test api template for flask",        # 程序描述
+    description="Rest api template for flask",        # 程序描述
     license="GPL",                                    # 程序授权信息
 
     author="jibq",                                    # 发布者
