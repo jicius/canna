@@ -19,14 +19,14 @@ Install Cookiecutter:
 
 Initialize the project with cookiecutter and answer some questions for the newly started project:
 
-    $ cookiecutter svn://202.85.213.18/hamilton/canna/trunk
+    $ cookiecutter https://github.com/jicius/canna.git
 
-    project_name [project_name]: flask_test
+    project_name [project_name]: canna_test
     project_slug [project_slug]:
     author_name [Your name]: Your name
     email [Your e-mail]: yourname@example.com
-    github_username [yourname]: yourusername
-    repo_name [tornado-project]:
+    github_username [yourname]: your username
+    repo_name [canna-project]:
     description [A short description of the project.]: short description
     version [0.1.0]:
     use_pytest [y]: y
