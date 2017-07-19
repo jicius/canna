@@ -15,3 +15,8 @@
 # 
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+from {{ cookiecutter.project_name }} import app
+
+# 开启调试模式
+app.config.update(DEBUG=True)
