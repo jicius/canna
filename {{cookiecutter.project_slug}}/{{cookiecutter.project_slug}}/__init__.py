@@ -22,4 +22,4 @@ from flask import Flask
 app = Flask(__name__, template_folder='wsgi/templates', static_folder='wsgi/static')
 
 
-from '{{ cookiecutter.project_name }}'.wsgi import views
+from {{ cookiecutter.project_name }}.wsgi import views

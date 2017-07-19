@@ -19,7 +19,7 @@
 from flask.views import MethodView
 from flask import render_template
 
-from '{{ cookiecutter.project_name }}' import app
+from {{ cookiecutter.project_name }} import app
 
 
 class WelcomeCanna(MethodView):
