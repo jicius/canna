@@ -20,3 +20,7 @@ from {{ cookiecutter.project_name }} import app
 
 # 开启调试模式
 app.config.update(DEBUG=True)
+
+
+if __name__ == '__main__':
+    app.run()
