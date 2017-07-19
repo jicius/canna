@@ -28,7 +28,7 @@ Configure fabfile before start your fab command.
     stdout_logfile=/var/log/{{ cookiecutter.project_name }}.log
 
 
-> Start Server
+> Start server
 
     supervisorctl reload
 
