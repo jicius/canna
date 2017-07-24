@@ -20,6 +20,10 @@ import os
 
 
 class Config:
+    # qq mail config
+    qq_mail_username = '2644148694@qq.com'
+    qq_mail_password = 'rrkwvmhjukahdjai'
+
     def __init__(self):
         pass
 
