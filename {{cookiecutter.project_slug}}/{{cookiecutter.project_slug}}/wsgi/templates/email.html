@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar-header">
+            <h1><b>Daily Summary for omega</b></h1>
+        </div>
+        <div>
+            <h3><b>Production <small style="color:green">{{ host }}</small></b></h3>
+        </div>
+
+        {% for it in items %}
+            <table class="table table-striped">
+                <h4>{{ it.keys()[0].split()[0].capitalize() }}</h4>
+                {% for k, v in it.iteritems() %}
+                    <tr>
+                        <td></td>
+                        <td style="width:160px;">{{ k.capitalize() }}</td>
+                        {% if 'success' in k %}
+                            <td style="width:20px; color:green;"><em>{{ v[0] }}</em></td>
+                            <td style="width:20px; color:green;"><em>{{ v[1] }}</em></td>
+                            <td style="width:20px; color:green;"><em>{{ v[2] }}</em></td>
+                        {% else %}
+                            <td style="width:20px;"><em>{{ v[0] }}</em></td>
+                            <td style="width:20px;"><em>{{ v[1] }}</em></td>
+                            <td style="width:20px;"><em>{{ v[2] }}</em></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+
+    </body>
+    <hr>
+    <footer class="footer navbar-fixed-bottom">
+        <div>
+            <p>Guanxiang.zhihaiTECH, Inc. Baosheng Street.Beijing.China, CA 1234</p>
+        </div>
+    </footer>
+</html>
