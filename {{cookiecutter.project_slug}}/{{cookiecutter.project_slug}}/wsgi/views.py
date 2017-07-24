@@ -16,10 +16,14 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from flask.views import MethodView
-from flask import render_template
+import time
 
-from {{ cookiecutter.project_name }} import app
+from pif import get_public_ip
+from flask.views import MethodView
+from flask import (render_template, jsonify)
+from flask_mail import Message
+
+from {{ cookiecutter.project_name }} import (app, mail)
 
 
 class WelcomeCanna(MethodView):
@@ -30,5 +34,29 @@ class WelcomeCanna(MethodView):
         return render_template('welcome.html')
 
 
+class MailAlter(MethodView):
+    """ 邮件监控
+
+    关键服务邮件监控通知
+    """
+    def get(self):
+        host = get_public_ip()
+        msg = Message(
+            subject="%s - Daily Summary - %s" % ({{ cookiecutter.project_name}}, time.ctime()),
+            sender=("Canna Notifier", "2644148694@qq.com"),  # sender是一个二元组, 分别为姓名和邮件地址
+            recipients=[
+                {{ cookiecutter.mail_receiver }}
+            ]
+        )
+        items = []
+        msg.html = render_template('email.html', items=items, title="canna.notifier", host=host)
+        try:
+            mail.send(msg)
+        except Exception as e:
+            return jsonify(dict(Code=-1, State=e))
+        return jsonify(dict(Code=0, State="Ok"))
+
+
 # 注册路由
 app.add_url_rule("/", view_func=WelcomeCanna.as_view('welcome'))
+app.add_url_rule("/send_mail", view_func=MailAlter.as_view('send_mail'))
