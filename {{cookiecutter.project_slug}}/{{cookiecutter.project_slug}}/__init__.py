@@ -17,9 +17,22 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from flask import Flask
+from flask_mail import Mail
+
+from {{ cookiecutter.project_name }}.config import config
 
 
 app = Flask(__name__, template_folder='wsgi/templates', static_folder='wsgi/static')
 
+# email are managed through a Mail instance
+app.config.update(
+    MAIL_SERVER='smtp.qq.com',
+    MAIL_PORT=465,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME=config.qq_mail_username,
+    MAIL_PASSWORD=config.qq_mail_password
+)
+
+mail = Mail(app)
 
 from {{ cookiecutter.project_name }}.wsgi import views
